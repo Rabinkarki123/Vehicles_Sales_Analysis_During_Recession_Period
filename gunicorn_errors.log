@@ -1,0 +1,30 @@
+[2023-10-17 12:18:03 -0700] [36382] [INFO] Starting gunicorn 21.2.0
+[2023-10-17 12:18:03 -0700] [36382] [INFO] Listening at: http://127.0.0.1:8000 (36382)
+[2023-10-17 12:18:03 -0700] [36382] [INFO] Using worker: sync
+[2023-10-17 12:18:03 -0700] [36383] [INFO] Booting worker with pid: 36383
+[2023-10-17 12:18:03 -0700] [36383] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/rabinkarki/opt/anaconda3/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/Users/rabinkarki/opt/anaconda3/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/Users/rabinkarki/opt/anaconda3/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/rabinkarki/opt/anaconda3/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/rabinkarki/opt/anaconda3/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/Users/rabinkarki/opt/anaconda3/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Users/rabinkarki/opt/anaconda3/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/Users/rabinkarki/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'wsgi'
+[2023-10-17 12:18:03 -0700] [36383] [INFO] Worker exiting (pid: 36383)
+[2023-10-17 12:18:03 -0700] [36382] [ERROR] Worker (pid:36383) exited with code 3
+[2023-10-17 12:18:03 -0700] [36382] [ERROR] Shutting down: Master
+[2023-10-17 12:18:03 -0700] [36382] [ERROR] Reason: Worker failed to boot.
